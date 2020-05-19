@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "uas2019.develops.stud11417025.testing_jetpack"
+        minSdkVersion 22
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled = true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.retrofit2:converter-scalars:2.3.0'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta1'
+    compile 'com.android.support:recyclerview-v7:24.0.0'
+    compile 'org.jetbrains.kotlin:kotlin-stdlib-jre7:1.1.2-4'
+    compile 'com.amitshekhar.android:rx2-android-networking:1.0.2'
+    compile 'io.reactivex.rxjava2:rxjava:2.2.18'
+    compile 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    compile 'androidx.lifecycle:lifecycle-extensions:2.0.0-alpha1'
+    compile 'android.arch.lifecycle:extensions:1.0.0'
+    compile 'com.github.bumptech.glide:glide:4.9.0'
+    compile 'androidx.recyclerview:recyclerview:1.1.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    testCompile 'junit:junit:4.12'
+    annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.0.0'
+}
